@@ -7,7 +7,7 @@ import InputCard from "./InputCard";
 const useStyle = makeStyles((theme) => ({
   root: {
     width: "300px",
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
   addCard: {
     padding: theme.spacing(1, 1, 1, 2),
