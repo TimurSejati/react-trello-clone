@@ -7,24 +7,23 @@ import InputContainer from "../Input/InputContainer";
 
 const useStyle = makeStyles((theme) => ({
   root: {
-    width: "300px",
+    minWidth: "300px",
     backgroundColor: "#EBECF0",
     marginLeft: theme.spacing(1),
   },
 }));
 
-export default function List() {
+export default function List({ list }) {
   const classes = useStyle();
   return (
     <div>
       <Paper className={classes.root}>
         <CssBaseline />
-        <Title />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <InputContainer />
+        <Title title={list.title} listId={list.id} />
+        {list.cards.map((card) => {
+          return <Card key={card.id} card={card}></Card>;
+        })}
+        <InputContainer listId={list.id} type="card" />
       </Paper>
     </div>
   );
